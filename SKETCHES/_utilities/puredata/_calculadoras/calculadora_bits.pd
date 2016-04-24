@@ -1,0 +1,9 @@
+#N canvas 245 264 244 170 10;
+#X floatatom 47 40 5 0 0 0 - - -;
+#X floatatom 47 103 5 0 0 0 - - -;
+#X obj 47 71 expr pow(2 \, $i1)-1;
+#X text -10 104 de 0 a..;
+#X text -12 3 Bits e ambito;
+#X text 84 41 bits;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
