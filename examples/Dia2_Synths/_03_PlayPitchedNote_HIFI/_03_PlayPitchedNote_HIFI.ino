@@ -12,7 +12,7 @@
 
 #define CONTROL_RATE 128
 #define BUTTONPIN 2 // definir o pin (digital) para o botao
-#define POTPIN 0 // definir o pin (analogico) para o potenciometro
+#define POTPIN 1 // definir o pin (analogico) para o potenciometro
 
 Oscil <SIN2048_NUM_CELLS, AUDIO_RATE> oscillator(SIN2048_DATA); // construtor da classe "Oscil": cira um objecto do tipo Oscil chamado oscillator
 ADSR <CONTROL_RATE, AUDIO_RATE> envelope; // construtor da classe ADSR: cria um objecto to tipo ADSR chamado envelope

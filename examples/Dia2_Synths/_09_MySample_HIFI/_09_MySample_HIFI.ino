@@ -14,6 +14,8 @@ const IntMap aMap(0,1023,10,18649);
 
 Sample <BIKE_20608_NUM_CELLS, AUDIO_RATE> aSample(BIKE_20608_DATA);
 
+#define POTPIN 1
+
 void setup() {
   startMozzi();
   aSample.setFreq(BIKE_20608_SAMPLERATE / (float) BIKE_20608_NUM_CELLS); // tocar ficheiro na velocidade com que foi gravado e exportado
@@ -22,7 +24,7 @@ void setup() {
 }
 
 void updateControl(){
-  aSample.setEnd(aMap(mozziAnalogRead(0)));
+  aSample.setEnd(aMap(mozziAnalogRead(POTPIN)));
 }
 
 int updateAudio(){

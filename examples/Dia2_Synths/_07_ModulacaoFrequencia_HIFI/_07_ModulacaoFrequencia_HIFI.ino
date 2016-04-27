@@ -10,6 +10,7 @@
 #include <tables/SIN8192_int8.h> // incluimos a tabela com a forma de onda sinusoidal  
 
 #define CONTROL_RATE 512
+#define POTPIN 1
 
 Oscil<SIN8192_NUM_CELLS, AUDIO_RATE> aPortadora(SIN8192_DATA); 
 Oscil<SIN8192_NUM_CELLS, AUDIO_RATE> aModuladora(SIN8192_DATA);
@@ -25,7 +26,7 @@ void setup() {
 }
 
 void updateControl() { // Funçao onde podemos controlar os nossos osciladores
-  aModuladora.setFreq(mozziAnalogRead(0));
+  aModuladora.setFreq(mozziAnalogRead(POTPIN));
 }
 
 int updateAudio() { 

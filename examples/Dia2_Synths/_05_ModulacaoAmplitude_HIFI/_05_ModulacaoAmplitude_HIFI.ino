@@ -13,6 +13,7 @@
 #include <tables/SIN8192_int8.h> // incluimos a tabela com a forma de onda sinusoidal  
 
 #define CONTROL_RATE 512
+#define POTPIN 1
 
 Oscil<SIN8192_NUM_CELLS, AUDIO_RATE> aPortadora(SIN8192_DATA); 
 Oscil<SIN8192_NUM_CELLS, AUDIO_RATE> aModuladora(SIN8192_DATA);
@@ -24,7 +25,7 @@ void setup() {
 }
 
 void updateControl() { // Funçao onde podemos controlar os nossos osciladores
-  aModuladora.setFreq(mozziAnalogRead(0)/4.f);// controlamos a freq. da moduladora (entre 0 e 127 Hz, dai dividir por 4 pq a entrada e de 0~1023)
+  aModuladora.setFreq(mozziAnalogRead(POTPIN)/4.f);// controlamos a freq. da moduladora (entre 0 e 127 Hz, dai dividir por 4 pq a entrada e de 0~1023)
   // 4.f e o mesmo que 4.0, portanto e do tipo 'flot'
   // se usassemos um inteiro iriiamos obter menos "degraus"
   // experimente a divisao com um inteiro e ouça a diferença
